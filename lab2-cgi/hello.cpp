@@ -1,4 +1,4 @@
-#include "QueryStringParser.h"
+#include "QueryParameters.h"
 #include <array>
 #include <cstdlib>
 #include <iostream>
@@ -32,9 +32,9 @@ void printEnvironmentVariables(std::ostream &out)
     }
 }
 
-string GetQueryStringParameter2(string_view parameterName)
+string GetQueryStringParameter(string_view parameterName)
 {
-    return GetQueryStringParameter(getenv(QueryString), parameterName);
+    return QueryParameters(getenv(QueryString)).value(parameterName);
 }
 
 } // namespace
@@ -42,8 +42,8 @@ string GetQueryStringParameter2(string_view parameterName)
 int main()
 {
     const auto name = [] {
-        auto name = GetQueryStringParameter2("name");
-        return name.empty() ? "Anonymus" : name;
+        auto name = GetQueryStringParameter("name");
+        return name.empty() ? "Anonymous" : name;
     }();
 
     cout << "Content-Type: text/plain" << endl

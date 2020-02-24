@@ -2,8 +2,6 @@
 #include <vector>
 #include <optional>
 
-std::string GetQueryStringParameter(const std::string &queryString, std::string_view parameterName);
-
 class QueryParameters
 {
 public:

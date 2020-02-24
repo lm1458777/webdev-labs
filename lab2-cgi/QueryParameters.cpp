@@ -1,4 +1,4 @@
-#include "QueryStringParser.h"
+#include "QueryParameters.h"
 #include <sstream>
 
 using namespace std;
@@ -39,7 +39,7 @@ string GetQueryStringParameter(const string &queryString, string_view parameterN
     return parameters.value(parameterName).value_or(string());
 }
 
-QueryParameters::QueryParameters(const std::string &queryString)
+QueryParameters::QueryParameters(const string &queryString)
 {
     const auto parts = split(queryString, '&');
     for (const auto &p : parts)
@@ -51,7 +51,7 @@ QueryParameters::QueryParameters(const std::string &queryString)
     }
 }
 
-std::optional<std::string> QueryParameters::value(std::string_view parameterName) const
+optional<string> QueryParameters::value(string_view parameterName) const
 {
     for (const auto &[name, value] : m_parameters)
     {
