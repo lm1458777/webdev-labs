@@ -1,7 +1,5 @@
 #include "QueryStringParser.h"
-#include <vector>
 #include <sstream>
-#include <iostream>
 
 using namespace std;
 
@@ -20,27 +18,48 @@ vector<string> split(const string &s, char delimiter)
     return tokens;
 }
 
-bool stringStartsWith(const string &s, string_view prefix)
+optional<pair<string, string>> tryParseNameAndValue(const string &s)
 {
-    return 0 == s.rfind(prefix, 0);
+    auto parts = split(s, '=');
+    if (parts.size() == 2 && !parts.front().empty())
+    {
+        return pair(
+            move(parts.front()),
+            move(parts.back()));
+    }
+
+    return nullopt;
 }
 
 } // namespace
 
 string GetQueryStringParameter(const string &queryString, string_view parameterName)
 {
-    const auto nameValuePairs = split(queryString, '&');
+    const auto parameters = QueryParameters(queryString);
+    return parameters.value(parameterName).value_or(string());
+}
 
-    auto it = std::find_if(nameValuePairs.begin(), nameValuePairs.end(), [parameterName](const string &nameValuePair) {
-        return stringStartsWith(nameValuePair, parameterName);
-    });
-    if (it != nameValuePairs.end())
+QueryParameters::QueryParameters(const std::string &queryString)
+{
+    const auto parts = split(queryString, '&');
+    for (const auto &p : parts)
     {
-        auto nameValuePair = split(*it, '=');
-        if (nameValuePair.size() == 2 && nameValuePair.front() == parameterName)
+        if (auto nameValuePair = tryParseNameAndValue(p))
         {
-            return move(nameValuePair.back());
+            m_parameters.push_back(move(nameValuePair).value());
         }
     }
-    return string();
+}
+
+std::optional<std::string> QueryParameters::value(std::string_view parameterName) const
+{
+    for (const auto &[name, value] : m_parameters)
+    {
+        if (name == parameterName)
+        {
+            return value;
+        }
+    }
+
+    return nullopt;
 }
