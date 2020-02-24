@@ -23,9 +23,9 @@ optional<pair<string, string>> tryParseNameAndValue(const string &s)
     auto parts = split(s, '=');
     if (parts.size() == 2 && !parts.front().empty())
     {
-        return pair(
+        return pair{
             move(parts.front()),
-            move(parts.back()));
+            move(parts.back())};
     }
 
     return nullopt;
@@ -46,7 +46,7 @@ QueryParameters::QueryParameters(const string &queryString)
     {
         if (auto nameValuePair = tryParseNameAndValue(p))
         {
-            m_parameters.push_back(move(nameValuePair).value());
+            m_parameters.push_back(*move(nameValuePair));
         }
     }
 }
