@@ -10,6 +10,11 @@ namespace
 
 const char *const QUERY_STRING = "QUERY_STRING";
 
+QueryParameters queryParameters(const Application::EnvironmentVariables &env)
+{
+    return QueryParameters{env(QUERY_STRING).value_or("")};
+}
+
 } // namespace
 
 Application::Application(std::ostream &out, EnvironmentVariables env)
@@ -20,14 +25,11 @@ Application::Application(std::ostream &out, EnvironmentVariables env)
 void Application::sayHello() const
 {
     string name = "Anonymous";
-    if (auto queryString = m_env(QUERY_STRING))
+    if (auto n = queryParameters(m_env).value("name"))
     {
-        if (auto n = QueryParameters(*queryString).value("name"))
+        if (!n->empty())
         {
-            if (!n->empty())
-            {
-                name = *move(n);
-            }
+            name = *move(n);
         }
     }
 
@@ -59,10 +61,10 @@ void Application::printEnvironmentVariables() const
 
 void Application::printPersonInfo() const
 {
-    const auto queryParameters = QueryParameters(m_env(QUERY_STRING).value_or(""));
+    const auto parameters = queryParameters(m_env);
 
-    auto print = [this, &queryParameters](const char *label, const char *parameterName) {
-        m_out << label << ": '" << queryParameters.value(parameterName).value_or("") << "'" << endl;
+    auto print = [this, &parameters](const char *label, const char *parameterName) {
+        m_out << label << ": '" << parameters.value(parameterName).value_or("") << "'" << endl;
     };
 
     m_out << "Person info:" << endl;
@@ -73,8 +75,7 @@ void Application::printPersonInfo() const
 
 void Application::sarahRevere() const
 {
-    const auto query = QueryParameters{m_env(QUERY_STRING).value_or("")};
-    const auto lanterns = query.value("lanterns").value_or("");
+    const auto lanterns = queryParameters(m_env).value("lanterns").value_or("");
 
     m_out << "SarahRevere:" << endl;
     if (lanterns == "1")
