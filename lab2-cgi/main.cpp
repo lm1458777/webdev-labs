@@ -28,5 +28,8 @@ int main()
     cout << endl;
     app.printEnvironmentVariables();
 
+    cout << endl;
+    app.printPersonInfo();
+
     return 0;
 }

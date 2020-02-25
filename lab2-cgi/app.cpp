@@ -56,3 +56,17 @@ void Application::printEnvironmentVariables() const
         m_out << "'" << endl;
     }
 }
+
+void Application::printPersonInfo() const
+{
+    const auto queryParameters = QueryParameters(m_env(QUERY_STRING).value_or(""));
+
+    auto print = [this, &queryParameters](const char *label, const char *parameterName) {
+        m_out << label << ": '" << queryParameters.value(parameterName).value_or("") << "'" << endl;
+    };
+
+    m_out << "Person info:" << endl;
+    print("First Name", "first_name");
+    print("Last Name", "last_name");
+    print("Age", "age");
+}

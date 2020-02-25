@@ -12,6 +12,7 @@ public:
 
     void sayHello() const;
     void printEnvironmentVariables() const;
+    void printPersonInfo() const;
 
 private:
     std::ostream &m_out;
