@@ -7,7 +7,7 @@ CXXFLAGS = -std=c++17 -Wall -Wno-c++11-inline-namespace -Wno-c++11-extensions
 CC = clang++
 
 $(TARGET): main.o app.o QueryParameters.o
-	$(CC) -o $(TARGET) $?
+	$(CC) -o $(TARGET) $^
 
 $(TESTS): QueryParameters.o QueryParametersTests.o
 
