@@ -13,6 +13,7 @@ public:
     void sayHello() const;
     void printEnvironmentVariables() const;
     void printPersonInfo() const;
+    void sarahRevere() const;
 
 private:
     std::ostream &m_out;

@@ -70,3 +70,23 @@ void Application::printPersonInfo() const
     print("Last Name", "last_name");
     print("Age", "age");
 }
+
+void Application::sarahRevere() const
+{
+    const auto query = QueryParameters{m_env(QUERY_STRING).value_or("")};
+    const auto lanterns = query.value("lanterns").value_or("");
+
+    m_out << "SarahRevere:" << endl;
+    if (lanterns == "1")
+    {
+        m_out << "The British are coming by land." << endl;
+    }
+    else if (lanterns == "2")
+    {
+        m_out << "The British are coming by sea." << endl;
+    }
+    else
+    {
+        m_out << "The North Church shows only \"" << lanterns << "\"." << endl;
+    }
+}

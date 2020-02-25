@@ -31,5 +31,8 @@ int main()
     cout << endl;
     app.printPersonInfo();
 
+    cout << endl;
+    app.sarahRevere();
+
     return 0;
 }
