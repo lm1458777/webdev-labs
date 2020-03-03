@@ -1,0 +1,10 @@
+<phpunit>
+  <php>
+    <includePath>./src</includePath>
+  </php>
+  <testsuites>
+    <testsuite name="all_tests">
+      <directory>./tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
