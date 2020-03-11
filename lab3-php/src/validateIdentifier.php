@@ -5,26 +5,27 @@ namespace lab3
 {
     const IDENTIFIER_OK = 1;
     const IDENTIFIER_EMPTY = 2;
-    const IDENTIFIER_INVALID = 3;
+    const IDENTIFIER_MUST_START_WITH_LETTER = 3;
+    const IDENTIFIER_CONTAINS_INVALID_SYMBOL = 4;
 
-    function validateIdentifier(string $s): int
+    function validateIdentifier(string $id): int
     {
-        if ($s === "")
+        if ($id === "")
         {
             return IDENTIFIER_EMPTY;
         }
 
-        if (!ctype_alpha($s[0]))
+        if (!ctype_alpha($id[0]))
         {
-            return IDENTIFIER_INVALID;
+            return IDENTIFIER_MUST_START_WITH_LETTER;
         }
 
-        $n = strlen($s);
-        for ($i = 1; $i < $n; $i++)
+        $idLength = strlen($id);
+        for ($i = 1; $i < $idLength; $i++)
         {
-            if (!ctype_alnum($s[$i]))
+            if (!ctype_alnum($id[$i]))
             {
-                return IDENTIFIER_INVALID;
+                return IDENTIFIER_CONTAINS_INVALID_SYMBOL;
             }
         }
 

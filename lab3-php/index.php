@@ -30,8 +30,11 @@ function validateIdentifier(): void
         case lab3\IDENTIFIER_EMPTY:
             echo "no" . ". Identifier must not be empty.";
         break;
-        case lab3\IDENTIFIER_INVALID:
+        case lab3\IDENTIFIER_MUST_START_WITH_LETTER:
             echo "no" . ". Identifier must start with a letter.";
+        break;
+        case lab3\IDENTIFIER_CONTAINS_INVALID_SYMBOL:
+            echo "no" . ". Identifier contains invalid symbol.";
         break;
     }
 
@@ -56,8 +59,6 @@ function passwordStrength(): void
 }
 
 header("Content-Type: text/plain");
-
-echo "Hello, world!" . PHP_EOL;
 
 removeExtraBlanks();
 validateIdentifier();
