@@ -16,12 +16,15 @@ class PersonInfoSerializer
             'age' => (string) $info->age
         ];
 
-        return serialize($data);
+        return (string) json_encode($data, JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR);
     }
 
     public static function unserialize(string $s): ?PersonInfo
     {
-        $data = unserialize($s);
+        $data = json_decode($s, true);
+        if ($data === null) {
+            return null;
+        }
 
         $info = new PersonInfo();
         $info->email = tryGetValue($data, 'email');
