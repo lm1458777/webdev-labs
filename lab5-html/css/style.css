@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+}
+
+.content {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.about_me {
+    margin-top: 260px;
+}
+
+.about_me:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column1 {
+    margin-left: 120px;
+    width: 330px;
+    float: left;
+}
+
+.text {
+    margin-left: 60px;
+    width: 570px;
+    float: left;
+}
+
+.photo {
+    width: 330px;
+    height: 350px;
+    border-radius: 5px;
+    background-color: #132d36;
+}
+
+.sidebar {
+    margin-top: 44px;
+}
+
+.my_header {
+    font-size: 24px;
+    line-height: 32px;
+    color: #15a98c;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 42px;
+    color: #333333;
+    font-family: "Open Sans";
+    font-weight: 700;
+    margin: 83px 0 0 3px;
+}
+
+ul, ol {
+    font-size: 19px;
+    line-height: 36px;
+    color: #555555;
+    font-family: "Georgia";
+    padding-inline-start: 21px;
+}
+
+ul {
+    margin-top: 14px;
+}
+
+ol {
+    margin-top: 13px;
+}
+
+.favorite_films {
+    margin-top: 40px;
+}
+
+.quote {
+    background-color: cyan;
+}
+
+.quote_text {
+    font-size: 28px;
+    line-height: 42px;
+    color: #ffffff;
+    font-family: "Georgia";
+    font-style: italic;
+    margin: 25px 0 0 2px;
+}
+
+.quote_author {
+    font-size: 16px;
+    line-height: 42px;
+    color: #f5f5f5;
+    font-family: "Open Sans";
+    font-weight: 600;
+    margin: 2px 0 0 6px;
+}
