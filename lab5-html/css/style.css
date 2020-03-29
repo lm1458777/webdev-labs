@@ -1,14 +1,40 @@
 body {
     margin: 0;
+    position: relative;
 }
 
-.content {
+body:after, body:before {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 1920px;
+    height: 400px;
+}
+
+body:after {
+    content: "";
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+body:before {
+    content: url("../images/background.jpg");
+    z-index: -2;
+}
+
+header {
+    height: 50px;
+    margin: 0;
+}
+
+.main {
     width: 1200px;
     margin: 0 auto;
 }
 
 .about_me {
-    margin-top: 260px;
+    margin-top: 210px;
 }
 
 .about_me:after {
@@ -30,6 +56,7 @@ body {
 }
 
 .photo {
+    display: block;
     width: 330px;
     height: 350px;
     border-radius: 5px;
@@ -56,6 +83,18 @@ h1 {
     font-family: "Open Sans";
     font-weight: 700;
     margin: 83px 0 0 3px;
+    position: relative;
+}
+
+h1:after {
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 72px;
+    width: 60px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: rgb(69, 195, 170);
 }
 
 ul, ol {
@@ -121,7 +160,6 @@ ol {
 .text2 {
     margin: 16px 0 0 0;
 }
-
 
 .write_me {
     display: inline-block;
