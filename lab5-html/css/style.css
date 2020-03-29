@@ -74,12 +74,16 @@ ol {
     margin-top: 13px;
 }
 
+.item1 {
+    margin-left: -3px;
+}
+
 .favorite_films {
     margin-top: 40px;
 }
 
 .quote {
-    background-color: cyan;
+    width: 570px;
 }
 
 .quote_text {
@@ -98,4 +102,47 @@ ol {
     font-family: "Open Sans";
     font-weight: 600;
     margin: 2px 0 0 6px;
+}
+
+.text1, .text2, .write_me {
+    font-size: 19px;
+    font-family: "Georgia";
+    line-height: 32px;
+}
+
+.text1, .text2 {
+    color: rgb(85, 85, 85);
+}
+
+.text1 {
+    margin: 80px 60px 0 0;
+}
+
+.text2 {
+    margin: 16px 0 0 0;
+}
+
+
+.write_me {
+    display: inline-block;
+    color: rgb(21, 169, 139);
+    margin: 40px 0 0 0;
+    text-decoration: none;
+}
+
+.write_me span {
+    border-bottom: 1px solid rgb(21, 169, 139);
+}
+
+.write_me:after {
+    content: " →";
+}
+
+h2 {
+    font-size: 36px;
+    line-height: 42px;
+    font-family: "Open Sans";
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+    margin: 42px 0 0 -1px;
 }
