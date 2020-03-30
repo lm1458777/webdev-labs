@@ -184,3 +184,52 @@ h2 {
     color: rgb(51, 51, 51);
     margin: 42px 0 0 -1px;
 }
+
+h3 {
+    font-size: 36px;
+    font-family: "Open Sans";
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+    margin: 89px 0 0 0;
+}
+
+.movies {
+    margin-top: 30px;
+}
+
+.movie {
+    width: 285px;
+    margin: 0 0 0 20px;
+    content: "1";
+    float: left;
+}
+
+.movie_poster {
+    height: 190px;
+    border-radius: 5px;
+    display: block;
+}
+
+h4 {
+    font-size: 22px;
+    font-family: "Open Sans";
+    font-weight: 700;
+    color: #333;
+    margin: 24px 0 0 -2px;
+}
+
+.movie:first-child {
+    margin-left: 0;
+}
+
+.movie_description {
+    font-size: 16px;
+    line-height: 28px;
+    color: #555555;
+    font-family: "Georgia";
+    margin: 18px 0 0 0;
+}
+
+.shifted {
+    margin-left: 0px;
+}
