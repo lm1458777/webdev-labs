@@ -23,9 +23,91 @@ body:before {
     z-index: -2;
 }
 
-header {
+.top_menu {
     height: 50px;
     margin: 0;
+}
+
+.top_menu ul {
+    margin: 0 0 0 480px;
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+}
+
+.top_menu ul li {
+    height: 100%;
+    float: left;
+}
+
+.top_menu ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.menu_item_about_me, .menu_item_my_hobby, .menu_item_favorite_films {
+    height: 100%;
+    line-height: 49px;
+    font-size: 19px;
+    font-family: "Georgia";
+    text-decoration: none;
+    display: block;
+    padding-top: 1px;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(51, 51, 51);
+}
+
+.menu_item_about_me {
+    width: 140px;
+    text-indent: 9px;
+}
+
+.menu_item_about_me:before {
+    content: url("../images/about_me_icon.png");
+    position: relative;
+    left: -10px;
+    top: 1px;
+}
+
+.menu_item_my_hobby {
+    width: 164px;
+    text-indent: 6px;
+}
+
+.menu_item_my_hobby:before {
+    content: url("../images/hobby_icon.png");
+    position: relative;
+    left: -10px;
+    top: 2px;
+}
+
+.menu_item_favorite_films {
+    width: 230px;
+    text-indent: 5px;
+}
+
+.menu_item_favorite_films:before {
+    content: url("../images/video_icon.png");
+    position: relative;
+    left: -10px;
+    top: 1px;
+}
+
+.menu_item_about_me:hover, .menu_item_my_hobby:hover, .menu_item_favorite_films:hover, .active {
+    color: rgb(245, 245, 245);
+    background-color: #15a98c;
+}
+
+.button_background {
+    background-image: url("button_background.png");
+    position: absolute;
+    left: 480px;
+    top: 0px;
+    width: 140px;
+    height: 50px;
+    z-index: 73;
 }
 
 .main {
@@ -267,5 +349,5 @@ footer {
     text-align: center;
     text-indent: -19px;
     margin: 70px 0 0 0;
-    padding-top:1px;
+    padding-top: 1px;
 }
