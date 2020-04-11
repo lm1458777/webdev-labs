@@ -1,5 +1,7 @@
 body {
+    font-family: "Georgia";
     margin: 0;
+    width: 1920px;
     position: relative;
 }
 
@@ -7,7 +9,7 @@ body:after, body:before {
     position: absolute;
     left: 0;
     top: 50px;
-    width: 1920px;
+    right: 0;
     height: 400px;
 }
 
@@ -21,6 +23,13 @@ body:after {
 body:before {
     content: url("../images/background.jpg");
     z-index: -2;
+}
+
+ul, ol {
+    font-size: 19px;
+    line-height: 36px;
+    color: #555555;
+    padding-inline-start: 21px;
 }
 
 .top_menu {
@@ -48,13 +57,12 @@ body:before {
     height: 100%;
     line-height: 49px;
     font-size: 19px;
-    font-family: "Georgia";
     text-decoration: none;
     display: block;
     padding-top: 1px;
     box-sizing: border-box;
     text-align: center;
-    color: rgb(51, 51, 51);
+    color: #333333;
 }
 
 .menu_item_about_me {
@@ -94,18 +102,8 @@ body:before {
 }
 
 .menu_item_about_me:hover, .menu_item_my_hobby:hover, .menu_item_favorite_films:hover, .active {
-    color: rgb(245, 245, 245);
+    color: #f5f5f5;
     background-color: #15a98c;
-}
-
-.button_background {
-    background-image: url("button_background.png");
-    position: absolute;
-    left: 480px;
-    top: 0px;
-    width: 140px;
-    height: 50px;
-    z-index: 73;
 }
 
 .main {
@@ -121,12 +119,6 @@ body:before {
     content: "";
     display: table;
     clear: both;
-}
-
-.column1 {
-    margin-left: 120px;
-    width: 330px;
-    float: left;
 }
 
 .text {
@@ -145,10 +137,33 @@ body:before {
 }
 
 .sidebar {
-    margin-top: 44px;
+    margin-left: 120px;
+    width: 330px;
+    float: left;
 }
 
-.my_header {
+.sidebar_authors {
+    margin-top: 45px;
+}
+
+.sidebar_authors ul {
+    margin-top: 13px;
+}
+
+.sidebar_films {
+    margin-top: 41px;
+}
+
+.sidebar_films ol {
+    margin-top: 12px;
+    margin-left: -1px;
+}
+
+.sidebar_films ol li:first-child {
+    margin-left: -2px;
+}
+
+.sidebar_header {
     font-size: 24px;
     line-height: 32px;
     color: #15a98c;
@@ -161,7 +176,7 @@ h1 {
     font-size: 48px;
     line-height: 42px;
     color: #333333;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-weight: 700;
     margin: 82px 0 0 4px;
     position: relative;
@@ -178,30 +193,6 @@ h1:after {
     background-color: #45c3aa;
 }
 
-ul, ol {
-    font-size: 19px;
-    line-height: 36px;
-    color: #555555;
-    font-family: "Georgia";
-    padding-inline-start: 21px;
-}
-
-ul {
-    margin-top: 14px;
-}
-
-ol {
-    margin-top: 13px;
-}
-
-.item1 {
-    margin-left: -3px;
-}
-
-.favorite_films {
-    margin-top: 40px;
-}
-
 .quote {
     width: 570px;
 }
@@ -210,7 +201,6 @@ ol {
     font-size: 28px;
     line-height: 42px;
     color: #ffffff;
-    font-family: "Georgia";
     font-style: italic;
     margin: 25px 0 0 3px;
 }
@@ -219,14 +209,13 @@ ol {
     font-size: 16px;
     line-height: 42px;
     color: #f5f5f5;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-weight: 600;
     margin: 2px 0 0 6px;
 }
 
 .about_me_text, .my_hobby_text, .write_me {
     font-size: 19px;
-    font-family: "Georgia";
     line-height: 32px;
 }
 
@@ -262,7 +251,7 @@ ol {
 
 .my_hobby_header, .favorite_films_header {
     font-size: 36px;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-weight: 400;
     color: #333333;
 }
@@ -298,9 +287,9 @@ ol {
     display: block;
 }
 
-h4 {
+h3 {
     font-size: 22px;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-weight: 700;
     color: #333;
     margin: 24px 0 0 -2px;
@@ -314,17 +303,15 @@ h4 {
     font-size: 16px;
     line-height: 28px;
     color: #555555;
-    font-family: "Georgia";
     margin: 18px 0 0 0;
 }
 
-.shifted {
+.margin_left_0 {
     margin-left: 0px;
 }
 
 .button {
     font-size: 19px;
-    font-family: "Georgia";
     line-height: 50px;
     color: #f5f5f5;
     background-color: #15a98c;
@@ -341,13 +328,12 @@ h4 {
 
 footer {
     height: 70px;
-    font-family: "Georgia";
     font-size: 16px;
     line-height: 69px;
     color: #555555;
     background-color: #f5f5f5;
     text-align: center;
-    text-indent: -19px;
+    text-indent: -20px;
     margin: 70px 0 0 0;
     padding-top: 1px;
 }
