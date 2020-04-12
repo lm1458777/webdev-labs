@@ -1,0 +1,347 @@
+@import "fonts";
+@import "colors";
+
+@mixin clearfix {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: $text-font;
+    color: $text-color;
+    margin: 0;
+    width: 1920px;
+    position: relative;
+
+    &:after,
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 50px;
+        right: 0;
+        height: 400px;
+    }
+
+    &:after {
+        content: "";
+        background-color: black;
+        opacity: 0.5;
+        z-index: -1;
+    }
+
+    &:before {
+        content: url("../images/background.jpg");
+        z-index: -2;
+    }
+}
+
+ul,
+ol {
+    font-size: 19px;
+    line-height: 36px;
+    padding-inline-start: 21px;
+}
+
+.top_menu {
+    margin: 0;
+
+    ul {
+        margin: 0 0 0 480px;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            height: 50px;
+            float: left;
+        }
+
+        &:after {
+            @include clearfix;
+        }
+    }
+}
+
+.menu_item_about_me,
+.menu_item_my_hobby,
+.menu_item_favorite_films {
+    height: 100%;
+    line-height: 49px;
+    font-size: 19px;
+    text-decoration: none;
+    display: block;
+    padding-top: 1px;
+    box-sizing: border-box;
+    text-align: center;
+    color: $menu-item-color;
+}
+
+.menu_item_about_me {
+    width: 140px;
+    text-indent: 9px;
+
+    &:before {
+        content: url("../images/about_me_icon.png");
+        position: relative;
+        left: -10px;
+        top: 1px;
+    }
+}
+
+.menu_item_my_hobby {
+    width: 164px;
+    text-indent: 6px;
+
+    &:before {
+        content: url("../images/hobby_icon.png");
+        position: relative;
+        left: -10px;
+        top: 2px;
+    }
+}
+
+.menu_item_favorite_films {
+    width: 230px;
+    text-indent: 6px;
+
+    &:before {
+        content: url("../images/video_icon.png");
+        position: relative;
+        left: -10px;
+        top: 1px;
+    }
+}
+
+.menu_item_about_me:hover,
+.menu_item_my_hobby:hover,
+.menu_item_favorite_films:hover,
+.active {
+    color: #f5f5f5;
+    background-color: $green-color;
+}
+
+.main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.about_me {
+    margin-top: 210px;
+
+    &:after {
+        @include clearfix;
+    }
+}
+
+.text {
+    margin-left: 60px;
+    width: 570px;
+    min-height: 900px;
+    float: left;
+}
+
+.photo {
+    display: block;
+    width: 330px;
+    height: 350px;
+    border-radius: 5px;
+    background-color: #132d36;
+}
+
+.sidebar {
+    margin-left: 120px;
+    width: 330px;
+    float: left;
+}
+
+.sidebar_authors {
+    margin-top: 45px;
+
+    ul {
+        margin-top: 13px;
+    }
+}
+
+.sidebar_films {
+    margin-top: 41px;
+
+    ol {
+        margin-top: 12px;
+        margin-left: -1px;
+
+        li:first-child {
+            margin-left: -2px;
+        }
+    }
+}
+
+.sidebar_header {
+    font-size: 24px;
+    line-height: 32px;
+    color: $green-color;
+    font-family: $header-font;
+    font-weight: 600;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 42px;
+    color: $header-color;
+    font-family: $header-font;
+    font-weight: 700;
+    margin: 82px 0 0 4px;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 73px;
+        width: 60px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: #45c3aa;
+    }
+}
+
+.quote {
+    width: 570px;
+}
+
+.quote_text {
+    font-size: 28px;
+    line-height: 42px;
+    color: #ffffff;
+    font-style: italic;
+    margin: 25px 0 0 3px;
+}
+
+.quote_author {
+    font-size: 16px;
+    line-height: 42px;
+    color: #f5f5f5;
+    font-family: $header-font;
+    font-weight: 600;
+    margin: 2px 0 0 6px;
+}
+
+.about_me_text,
+.my_hobby_text,
+.write_me {
+    font-size: 19px;
+    line-height: 32px;
+}
+
+.about_me_text {
+    margin: 81px 60px 0 0;
+}
+
+.my_hobby_text {
+    margin: 12px 0 0 0;
+}
+
+.write_me {
+    $green-color: #15a98b;
+    display: inline-block;
+    color: $green-color;
+    margin: 41px 0 0 0;
+    text-decoration: none;
+
+    span {
+        border-bottom: 1px solid $green-color;
+    }
+
+    &:after {
+        content: " →";
+        position: relative;
+        top: 1px;
+        left: 1px;
+    }
+}
+
+.my_hobby_header,
+.favorite_films_header {
+    font-size: 36px;
+    font-family: $header-font;
+    font-weight: 400;
+    color: $header-color;
+}
+
+.my_hobby_header {
+    margin: 38px 0 0 -2px;
+}
+
+.favorite_films_header {
+    margin: 71px 0 0 0;
+}
+
+.movies {
+    margin-top: 30px;
+
+    &:after {
+        @include clearfix;
+    }
+}
+
+.movie {
+    width: 285px;
+    margin: 0 0 0 20px;
+    content: "1";
+    float: left;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.movie_poster {
+    height: 190px;
+    border-radius: 5px;
+    display: block;
+}
+
+h3 {
+    font-size: 22px;
+    font-family: $header-font;
+    font-weight: 700;
+    color: $header-color;
+    margin: 24px 0 0 -2px;
+}
+
+.movie_description {
+    font-size: 16px;
+    line-height: 28px;
+    margin: 18px 0 0 0;
+}
+
+.margin_left_0 {
+    margin-left: 0px;
+}
+
+.button {
+    font-size: 19px;
+    line-height: 50px;
+    color: #f5f5f5;
+    background-color: $green-color;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    display: block;
+    margin: 54px auto 0 auto;
+    position: relative;
+    left: -10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer {
+    height: 70px;
+    font-size: 16px;
+    line-height: 69px;
+    background-color: #f5f5f5;
+    text-align: center;
+    text-indent: -20px;
+    margin: 70px 0 0 0;
+    padding-top: 1px;
+}
