@@ -189,7 +189,7 @@ h1 {
     color: $header-color;
     font-family: $header-font;
     font-weight: 700;
-    margin: 70px 0 0 4px;
+    margin: 80px 0 0 4px;
     position: relative;
 
     &:after {
@@ -208,7 +208,7 @@ h1 {
     width: 570px;
 }
 
-.quote_text {
+blockquote {
     font-size: 28px;
     line-height: 42px;
     color: #ffffff;
@@ -218,11 +218,10 @@ h1 {
 
 .quote_author {
     font-size: 16px;
-    line-height: 42px;
     color: #f5f5f5;
     font-family: $header-font;
     font-weight: 600;
-    margin: 2px 0 0 6px;
+    margin: 12px 0 0 6px;
 }
 
 .about_me_text,
