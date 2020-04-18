@@ -120,13 +120,9 @@ ol {
     background-color: $green-color;
 }
 
-.main {
-    width: 1200px;
-    margin: 0 auto;
-}
-
 .about_me {
-    margin-top: 210px;
+    margin: 210px auto 0 auto;
+    width: 960px;
 
     &:after {
         @include clearfix;
@@ -149,7 +145,6 @@ ol {
 }
 
 .sidebar {
-    margin-left: 120px;
     width: 330px;
     float: left;
 }
@@ -258,8 +253,7 @@ blockquote {
     }
 }
 
-.my_hobby_header,
-.favorite_films_header {
+h2 {
     font-size: 36px;
     font-family: $header-font;
     font-weight: 400;
@@ -270,8 +264,9 @@ blockquote {
     margin: 38px 0 0 -2px;
 }
 
-.favorite_films_header {
-    margin: 71px 0 0 0;
+.favorite_films {
+    width: 1200px;
+    margin: 71px auto 0 auto;
 }
 
 .movies {
