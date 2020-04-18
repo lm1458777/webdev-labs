@@ -186,18 +186,17 @@ ol {
 
 h1 {
     font-size: 48px;
-    line-height: 42px;
     color: $header-color;
     font-family: $header-font;
     font-weight: 700;
-    margin: 82px 0 0 4px;
+    margin: 70px 0 0 4px;
     position: relative;
 
     &:after {
         content: "";
         position: absolute;
         left: -4px;
-        top: 73px;
+        top: 85px;
         width: 60px;
         height: 6px;
         border-radius: 3px;
@@ -234,7 +233,7 @@ h1 {
 }
 
 .about_me_text {
-    margin: 81px 60px 0 0;
+    margin: 70px 60px 0 0;
 }
 
 .my_hobby_text {
