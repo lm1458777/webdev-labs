@@ -1,6 +1,9 @@
 @import "fonts";
 @import "colors";
 
+$about-me-width: 960px;
+$top-menu-height: 50px;
+
 @mixin clearfix {
     content: "";
     display: block;
@@ -10,17 +13,26 @@
 body {
     font-family: $text-font;
     color: $text-color;
+    background-color: white;
     margin: 0;
-    width: 1920px;
     position: relative;
 
     &:after,
     &:before {
         position: absolute;
         left: 0;
-        top: 50px;
+        top: $top-menu-height;
         right: 0;
         height: 400px;
+    }
+
+    &:before {
+        content: "";
+        background-image: url("../images/background.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -2;
     }
 
     &:after {
@@ -28,11 +40,6 @@ body {
         background-color: black;
         opacity: 0.5;
         z-index: -1;
-    }
-
-    &:before {
-        content: url("../images/background.jpg");
-        z-index: -2;
     }
 }
 
@@ -44,15 +51,15 @@ ol {
 }
 
 .top_menu {
-    margin: 0;
+    width: $about-me-width;
+    margin: 0 auto;
 
     ul {
-        margin: 0 0 0 480px;
         list-style-type: none;
+        margin: 0;
         padding: 0;
 
         li {
-            height: 50px;
             float: left;
             margin-right: 1px;
         }
@@ -64,14 +71,15 @@ ol {
 }
 
 .menu_item {
+    $top-padding: 1px;
+
     font-size: 19px;
-    line-height: 49px;
+    line-height: $top-menu-height - $top-padding;
     text-decoration: none;
     display: block;
-    padding-top: 1px;
     text-align: center;
     color: $menu-item-color;
-    padding: 1px 21px 0 20px;
+    padding: $top-padding 21px 0 20px;
 }
 
 .icon {
@@ -108,7 +116,7 @@ ol {
 
 .about_me {
     margin: 210px auto 0 auto;
-    width: 960px;
+    width: $about-me-width;
 
     &:after {
         @include clearfix;
