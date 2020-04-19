@@ -54,6 +54,7 @@ ol {
         li {
             height: 50px;
             float: left;
+            margin-right: 1px;
         }
 
         &:after {
@@ -62,62 +63,47 @@ ol {
     }
 }
 
-.menu_item_about_me,
-.menu_item_my_hobby,
-.menu_item_favorite_films {
-    height: 100%;
-    line-height: 49px;
+.menu_item {
     font-size: 19px;
+    line-height: 49px;
     text-decoration: none;
     display: block;
     padding-top: 1px;
-    box-sizing: border-box;
     text-align: center;
     color: $menu-item-color;
+    padding: 1px 21px 0 20px;
 }
 
-.menu_item_about_me {
-    width: 140px;
-    text-indent: 9px;
-
-    &:before {
-        content: url("../images/about_me_icon.png");
-        position: relative;
-        left: -10px;
-        top: 1px;
-    }
+.icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 9px 0 0;
+    position: relative;
+    top: 1px;
+    filter: invert(0%);
 }
 
-.menu_item_my_hobby {
-    width: 164px;
-    text-indent: 6px;
-
-    &:before {
-        content: url("../images/hobby_icon.png");
-        position: relative;
-        left: -10px;
-        top: 2px;
-    }
-}
-
-.menu_item_favorite_films {
-    width: 230px;
-    text-indent: 6px;
-
-    &:before {
-        content: url("../images/video_icon.png");
-        position: relative;
-        left: -10px;
-        top: 1px;
-    }
-}
-
-.menu_item_about_me:hover,
-.menu_item_my_hobby:hover,
-.menu_item_favorite_films:hover,
-.active {
+.menu_item:hover,
+.menu_item.active {
     color: #f5f5f5;
     background-color: $green-color;
+
+    .icon {
+        filter: invert(100%);
+    }
+}
+
+.icon_me {
+    content: url("../images/about_me_icon.png");
+}
+
+.icon_hobby {
+    content: url("../images/hobby_icon.png");
+}
+
+.icon_films {
+    content: url("../images/video_icon.png");
 }
 
 .about_me {
