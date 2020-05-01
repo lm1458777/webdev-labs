@@ -43,8 +43,7 @@ body {
     }
 }
 
-ul,
-ol {
+.list {
     font-size: 19px;
     line-height: 36px;
     padding-inline-start: 21px;
@@ -173,7 +172,7 @@ ol {
     margin: 0px;
 }
 
-h1 {
+.title {
     font-size: 48px;
     color: $header-color;
     font-family: $header-font;
@@ -197,7 +196,7 @@ h1 {
     width: 570px;
 }
 
-blockquote {
+.quote_text {
     font-size: 28px;
     line-height: 42px;
     color: #ffffff;
@@ -247,7 +246,7 @@ blockquote {
     }
 }
 
-h2 {
+.section_title {
     font-size: 36px;
     font-family: $header-font;
     font-weight: 400;
@@ -287,7 +286,7 @@ h2 {
     display: block;
 }
 
-h3 {
+.movie_title {
     font-size: 22px;
     font-family: $header-font;
     font-weight: 700;
