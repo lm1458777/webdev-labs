@@ -31,8 +31,7 @@ body:after {
   z-index: -1;
 }
 
-ul,
-ol {
+.list {
   font-size: 19px;
   line-height: 36px;
   -webkit-padding-start: 21px;
@@ -44,21 +43,21 @@ ol {
   margin: 0 auto;
 }
 
-.top_menu ul {
+.top_menu_list {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.top_menu ul li {
-  float: left;
-  margin-right: 1px;
-}
-
-.top_menu ul:after {
+.top_menu_list:after {
   content: "";
   display: block;
   clear: both;
+}
+
+.top_menu_list_item {
+  float: left;
+  margin-right: 1px;
 }
 
 .menu_item {
@@ -71,7 +70,7 @@ ol {
   padding: 1px 21px 0 20px;
 }
 
-.icon {
+.menu_item_icon {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -88,21 +87,21 @@ ol {
   background-color: #15a98c;
 }
 
-.menu_item:hover .icon,
-.menu_item.active .icon {
+.menu_item:hover .menu_item_icon,
+.menu_item.active .menu_item_icon {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.icon_me {
+.menu_item_icon_me {
   content: url("../images/about_me_icon.png");
 }
 
-.icon_hobby {
+.menu_item_icon_hobby {
   content: url("../images/hobby_icon.png");
 }
 
-.icon_films {
+.menu_item_icon_films {
   content: url("../images/video_icon.png");
 }
 
@@ -141,7 +140,7 @@ ol {
   margin-top: 45px;
 }
 
-.sidebar_authors ul {
+.sidebar_authors_list {
   margin-top: 13px;
 }
 
@@ -149,13 +148,9 @@ ol {
   margin-top: 41px;
 }
 
-.sidebar_films ol {
+.sidebar_films_list {
   margin-top: 12px;
   margin-left: -1px;
-}
-
-.sidebar_films ol li:first-child {
-  margin-left: -2px;
 }
 
 .sidebar_header {
@@ -167,7 +162,7 @@ ol {
   margin: 0px;
 }
 
-h1 {
+.title {
   font-size: 48px;
   color: #333;
   font-family: "Open Sans", sans-serif;
@@ -176,7 +171,7 @@ h1 {
   position: relative;
 }
 
-h1:after {
+.title:after {
   content: "";
   position: absolute;
   left: -4px;
@@ -191,7 +186,7 @@ h1:after {
   width: 570px;
 }
 
-blockquote {
+.quote_text {
   font-size: 28px;
   line-height: 42px;
   color: #ffffff;
@@ -229,10 +224,6 @@ blockquote {
   text-decoration: none;
 }
 
-.write_me span {
-  border-bottom: 1px solid #15a98b;
-}
-
 .write_me:after {
   content: " →";
   position: relative;
@@ -240,7 +231,11 @@ blockquote {
   left: 1px;
 }
 
-h2 {
+.write_me_title {
+  border-bottom: 1px solid #15a98c;
+}
+
+.section_title {
   font-size: 36px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
@@ -282,7 +277,7 @@ h2 {
   display: block;
 }
 
-h3 {
+.movie_title {
   font-size: 22px;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
@@ -294,10 +289,6 @@ h3 {
   font-size: 16px;
   line-height: 28px;
   margin: 18px 0 0 0;
-}
-
-.margin_left_0 {
-  margin-left: 0px;
 }
 
 .button {
