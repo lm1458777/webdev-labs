@@ -144,23 +144,19 @@ body {
 
 .sidebar_authors {
     margin-top: 45px;
+}
 
-    ul {
-        margin-top: 13px;
-    }
+.sidebar_authors_list {
+    margin-top: 13px;
 }
 
 .sidebar_films {
     margin-top: 41px;
+}
 
-    ol {
-        margin-top: 12px;
-        margin-left: -1px;
-
-        li:first-child {
-            margin-left: -2px;
-        }
-    }
+.sidebar_films_list {
+    margin-top: 12px;
+    margin-left: -1px;
 }
 
 .sidebar_header {
@@ -298,10 +294,6 @@ body {
     font-size: 16px;
     line-height: 28px;
     margin: 18px 0 0 0;
-}
-
-.margin_left_0 {
-    margin-left: 0px;
 }
 
 .button {
