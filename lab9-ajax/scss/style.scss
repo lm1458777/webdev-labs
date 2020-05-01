@@ -1,0 +1,324 @@
+@import "fonts";
+@import "colors";
+
+$about-me-width: 960px;
+$top-menu-height: 50px;
+
+@mixin clearfix {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: $text-font;
+    color: $text-color;
+    background-color: white;
+    margin: 0;
+    position: relative;
+
+    &:after,
+    &:before {
+        position: absolute;
+        left: 0;
+        top: $top-menu-height;
+        right: 0;
+        height: 400px;
+    }
+
+    &:before {
+        content: "";
+        background-image: url("../images/background.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -2;
+    }
+
+    &:after {
+        content: "";
+        background-color: black;
+        opacity: 0.5;
+        z-index: -1;
+    }
+}
+
+.list {
+    font-size: 19px;
+    line-height: 36px;
+    padding-inline-start: 21px;
+}
+
+.top_menu {
+    width: $about-me-width;
+    margin: 0 auto;
+}
+
+.top_menu_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &:after {
+        @include clearfix;
+    }
+}
+
+.top_menu_list_item {
+    float: left;
+    margin-right: 1px;
+}
+
+.menu_item {
+    $top-padding: 1px;
+
+    font-size: 19px;
+    line-height: $top-menu-height - $top-padding;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: $menu-item-color;
+    padding: $top-padding 21px 0 20px;
+}
+
+.menu_item_icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 9px 0 0;
+    position: relative;
+    top: 1px;
+    filter: invert(0%);
+}
+
+.menu_item:hover,
+.menu_item.active {
+    color: #f5f5f5;
+    background-color: $green-color;
+
+    .menu_item_icon {
+        filter: invert(100%);
+    }
+}
+
+.menu_item_icon_me {
+    content: url("../images/about_me_icon.png");
+}
+
+.menu_item_icon_hobby {
+    content: url("../images/hobby_icon.png");
+}
+
+.menu_item_icon_films {
+    content: url("../images/video_icon.png");
+}
+
+.about_me {
+    margin: 210px auto 0 auto;
+    width: $about-me-width;
+
+    &:after {
+        @include clearfix;
+    }
+}
+
+.text {
+    margin-left: 60px;
+    width: 570px;
+    min-height: 900px;
+    float: left;
+}
+
+.photo {
+    display: block;
+    width: 330px;
+    height: 350px;
+    border-radius: 5px;
+    background-color: #132d36;
+}
+
+.sidebar {
+    width: 330px;
+    float: left;
+}
+
+.sidebar_authors {
+    margin-top: 45px;
+}
+
+.sidebar_authors_list {
+    margin-top: 13px;
+}
+
+.sidebar_films {
+    margin-top: 41px;
+}
+
+.sidebar_films_list {
+    margin-top: 12px;
+    margin-left: -1px;
+}
+
+.sidebar_header {
+    font-size: 24px;
+    line-height: 32px;
+    color: $green-color;
+    font-family: $header-font;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.title {
+    font-size: 48px;
+    color: $header-color;
+    font-family: $header-font;
+    font-weight: 700;
+    margin: 80px 0 0 4px;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 85px;
+        width: 60px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: #45c3aa;
+    }
+}
+
+.quote {
+    width: 570px;
+}
+
+.quote_text {
+    font-size: 28px;
+    line-height: 42px;
+    color: #ffffff;
+    font-style: italic;
+    margin: 25px 0 0 3px;
+}
+
+.quote_author {
+    font-size: 16px;
+    color: #f5f5f5;
+    font-family: $header-font;
+    font-weight: 600;
+    margin: 12px 0 0 6px;
+}
+
+.about_me_text,
+.my_hobby_text,
+.write_me {
+    font-size: 19px;
+    line-height: 32px;
+}
+
+.about_me_text {
+    margin: 70px 60px 0 0;
+}
+
+.my_hobby_text {
+    margin: 12px 0 0 0;
+}
+
+.write_me {
+    $green-color: #15a98b;
+    display: inline-block;
+    color: $green-color;
+    margin: 41px 0 0 0;
+    text-decoration: none;
+
+    &:after {
+        content: " →";
+        position: relative;
+        top: 1px;
+        left: 1px;
+    }
+}
+
+.write_me_title {
+    border-bottom: 1px solid $green-color;
+}
+
+.section_title {
+    font-size: 36px;
+    font-family: $header-font;
+    font-weight: 400;
+    color: $header-color;
+}
+
+.my_hobby_header {
+    margin: 38px 0 0 -2px;
+}
+
+.favorite_films {
+    width: 1200px;
+    margin: 71px auto 0 auto;
+}
+
+.movies {
+    margin-top: 30px;
+
+    &:after {
+        @include clearfix;
+    }
+}
+
+.movie {
+    width: 285px;
+    margin: 0 0 0 20px;
+    float: left;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.movie_poster {
+    height: 190px;
+    border-radius: 5px;
+    display: block;
+}
+
+.movie_title {
+    font-size: 22px;
+    font-family: $header-font;
+    font-weight: 700;
+    color: $header-color;
+    margin: 24px 0 0 -2px;
+}
+
+.movie_description {
+    font-size: 16px;
+    line-height: 28px;
+    margin: 18px 0 0 0;
+}
+
+.button {
+    font-size: 19px;
+    line-height: 50px;
+    color: #f5f5f5;
+    background-color: $green-color;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    display: block;
+    margin: 54px auto 0 auto;
+    position: relative;
+    left: -10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer {
+    height: 70px;
+    font-size: 16px;
+    line-height: 69px;
+    background-color: #f5f5f5;
+    text-align: center;
+    text-indent: -20px;
+    margin: 70px 0 0 0;
+    padding-top: 1px;
+}
