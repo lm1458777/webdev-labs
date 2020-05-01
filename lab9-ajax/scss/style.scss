@@ -10,6 +10,16 @@ $top-menu-height: 50px;
     clear: both;
 }
 
+@mixin header($weight, $color: $header-color) {
+    font-family: $header-font;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin form_font($color: $header-color) {
+    @include header($weight: 400, $color: $color);
+}
+
 body {
     font-family: $text-font;
     color: $text-color;
@@ -160,19 +170,15 @@ body {
 }
 
 .sidebar_header {
+    @include header($weight: 600, $color: $green-color);
     font-size: 24px;
     line-height: 32px;
-    color: $green-color;
-    font-family: $header-font;
-    font-weight: 600;
     margin: 0px;
 }
 
 .title {
+    @include header($weight: 700);
     font-size: 48px;
-    color: $header-color;
-    font-family: $header-font;
-    font-weight: 700;
     margin: 80px 0 0 4px;
     position: relative;
 
@@ -201,10 +207,8 @@ body {
 }
 
 .quote_author {
+    @include header($weight: 600, $color: #f5f5f5);
     font-size: 16px;
-    color: #f5f5f5;
-    font-family: $header-font;
-    font-weight: 600;
     margin: 12px 0 0 6px;
 }
 
@@ -243,10 +247,8 @@ body {
 }
 
 .section_title {
+    @include header($weight: 400);
     font-size: 36px;
-    font-family: $header-font;
-    font-weight: 400;
-    color: $header-color;
 }
 
 .my_hobby_header {
@@ -283,10 +285,8 @@ body {
 }
 
 .movie_title {
+    @include header($weight: 700);
     font-size: 22px;
-    font-family: $header-font;
-    font-weight: 700;
-    color: $header-color;
     margin: 24px 0 0 -2px;
 }
 
@@ -296,29 +296,135 @@ body {
     margin: 18px 0 0 0;
 }
 
-.button {
+%button {
+    display: block;
+    font-family: $text-font;
     font-size: 19px;
     line-height: 50px;
+    width: 220px;
     color: #f5f5f5;
     background-color: $green-color;
-    width: 220px;
-    height: 50px;
     border-radius: 5px;
-    display: block;
+    text-align: center;
+
+    &:hover {
+        background-color: #098d71;
+        cursor: pointer;
+    }
+}
+
+.films_button {
+    @extend %button;
     margin: 54px auto 0 auto;
     position: relative;
     left: -10px;
     text-decoration: none;
+}
+
+.form_separator {
+    width: 700px;
+    margin: 105px auto 0 auto;
+    position: relative;
+    left: -7px;
+
+    display: flex;
+    align-items: center;
+
+    &:after,
+    &:before {
+        content: "";
+        height: 1px;
+        border: 0;
+        border-bottom: solid 1px #c4c4c4;
+        flex: 1;
+    }
+}
+
+.form_separator_text {
+    @include header($weight: 300);
+    font-size: 36px;
+    line-height: 42px;
     text-align: center;
+    padding: 0 23px 0 25px;
+}
+
+.feedback_form {
+    font-family: $header-font;
+    font-size: 20px;
+    line-height: 32px;
+    width: 540px;
+    margin: 68px auto 0 auto;
+}
+
+.form_label {
+    margin: 0 0 3px -1px;
+}
+
+label.required {
+    &:after {
+        content: " *";
+        color: red;
+    }
+}
+
+.form_input {
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    border-radius: 3px;
+    border: 2px solid $input-border-color;
+    margin: 3px 0 24px 0;
+    padding: 0 18px;
+
+    &:focus {
+        border-color: $green-color;
+        outline: none;
+    }
+}
+
+.form_sex_label {
+    display: inline-block;
+    margin: 0 0 4px -1px;
+}
+
+.form_input_radio {
+    margin: -4px 0 0 0;
+    vertical-align: middle;
+}
+
+.form_radio_input_label {
+    font-size: 18px;
+    margin: 0 35px 0 4px;
+}
+
+.form_sex_section {
+    margin-top: 43px;
+}
+
+.form_message_section {
+    margin-top: 36px;
+}
+
+.form_message {
+    @extend .form_input;
+    height: 150px;
+}
+
+.form_button {
+    @extend %button;
+    margin-top: 50px;
+    border-width: 0;
+    padding: 0;
 }
 
 footer {
-    height: 70px;
     font-size: 16px;
-    line-height: 69px;
+    line-height: 32px;
     background-color: #f5f5f5;
     text-align: center;
     text-indent: -20px;
-    margin: 70px 0 0 0;
-    padding-top: 1px;
+    margin: 50px 0 0 0;
+    padding: 17px 20px 21px 20px;
 }

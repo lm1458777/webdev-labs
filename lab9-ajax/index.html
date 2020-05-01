@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Jane Doe</title>
     <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="top_menu">
@@ -117,8 +117,35 @@
           </p>
         </div>
       </div>
-      <a class="button" href="#">Все фильмы</a>
+      <a class="films_button" href="#">Все фильмы</a>
     </div>
+    <div class="form_separator">
+      <span class="form_separator_text">НАПИШИ МНЕ</span>
+    </div>
+    <form class="feedback_form">
+      <label class="form_label required" for="name">Ваше имя</label>
+      <input class="form_input" type="text" id="name" name="name" required="required" />
+      <label class="form_label required" for="email">Ваш email</label>
+      <input class="form_input" type="email" id="email" name="email" required="required" />
+      <label class="form_label" for="country">Откуда вы?</label>
+      <select class="form_input" id="country" name="country">
+        <option>Россия</option>
+        <option>Ниоткуда</option>
+        <option>Откуда надо</option>
+      </select>
+      <div class="form_sex_section">
+        <label class="form_sex_label" for="sex">Ваш пол</label><br>
+        <input class="form_input_radio" type="radio" name="sex" id="male" value="male" checked />
+        <label class="form_radio_input_label" for="male">Мужской</label>
+        <input class="form_input_radio" type="radio" name="sex" id="female" value="female" />
+        <label class="form_radio_input_label" for="female">Женский</label>
+      </div>
+      <div class="form_message_section">
+        <label class="form_label required" for="message">Ваше сообщение</label>
+        <textarea class="form_message" name="message" id="message"></textarea>
+      </div>
+      <input class="form_button" type="submit" value="Отправить" />
+    </form>
     <footer>© 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»</footer>
   </body>
 </html>
