@@ -309,7 +309,6 @@ body {
 }
 
 %button {
-    display: block;
     font-family: $text-font;
     font-size: 19px;
     line-height: 50px;
@@ -327,6 +326,7 @@ body {
 
 .films_button {
     @extend %button;
+    display: block;
     margin: 54px auto 0 auto;
     position: relative;
     left: -10px;
@@ -396,6 +396,10 @@ label.required {
     }
 }
 
+.invalid_value {
+    border-color: #ee5252;
+}
+
 .form_sex_label {
     display: inline-block;
     margin: 0 0 4px -1px;
@@ -422,13 +426,41 @@ label.required {
 .form_message {
     @extend .form_input;
     height: 150px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .form_button {
     @extend %button;
-    margin-top: 50px;
+    display: inline-block;
     border-width: 0;
-    padding: 0;
+}
+
+.form_button_section {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.form_submission_result {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #2e2b2b;
+    margin-left: 31px;
+
+    &:before {
+        width: 27px;
+        height: 28px;
+        content: url("../images/checkmark.png");
+        margin: 0 14px 0 0;
+    }
+}
+
+.hidden {
+    display: none;
 }
 
 footer {
